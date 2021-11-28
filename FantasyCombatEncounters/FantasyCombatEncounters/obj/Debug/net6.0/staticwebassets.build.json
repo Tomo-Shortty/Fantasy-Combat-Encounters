@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CcKXitnB7A3WlU+qjGjCTlrq/rA44QjJqljhgiyaz3U=",
+  "Hash": "G+jkDM6K0FiZpQoPMvk0W7Pd1DsntCUSebE2FhBV8uI=",
   "Source": "FantasyCombatEncounters",
   "BasePath": "_content/FantasyCombatEncounters",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FantasyCombatEncounters.styles.css",
-      "SourceId": "FantasyCombatEncounters",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/FantasyCombatEncounters",
-      "RelativePath": "FantasyCombatEncounters.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FantasyCombatEncounters.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FantasyCombatEncounters.bundle.scp.css",
-      "SourceId": "FantasyCombatEncounters",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/FantasyCombatEncounters",
-      "RelativePath": "FantasyCombatEncounters.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FantasyCombatEncounters.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\Tomo\\Documents\\Programming\\Projects\\C#\\Fantasy-Combat-Encounters\\FantasyCombatEncounters\\FantasyCombatEncounters\\wwwroot\\css\\site.css",
       "SourceId": "FantasyCombatEncounters",
