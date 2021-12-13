@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Classes\Combatants\Goblinoids\" />
+    <Folder Include="Classes\Combatants\Beholders\" />
+    <Folder Include="Classes\Combatants\Giants\" />
+    <Folder Include="Classes\Combatants\Gnolls\" />
+    <Folder Include="Classes\Combatants\Hags\" />
+    <Folder Include="Classes\Combatants\Kobolds\" />
+    <Folder Include="Classes\Combatants\Mind Flayers\" />
+    <Folder Include="Classes\Combatants\Alliance\" />
+    <Folder Include="Classes\Combatants\Mercenaries\" />
+    <Folder Include="Classes\Combatants\Yuan-Ti\" />
+    <Folder Include="Classes\Combatants\Orcs\" />
+  </ItemGroup>
+
 </Project>
