@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31912.275
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyCombatEncounters", "FantasyCombatEncounters\FantasyCombatEncounters.csproj", "{3F53D39E-0AAD-4F39-B1B9-55862D2A3739}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyCombatEncounters", "FantasyCombatEncounters\FantasyCombatEncounters.csproj", "{4E56FC17-EEE9-4F00-9EF0-7654D1586665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F53D39E-0AAD-4F39-B1B9-55862D2A3739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F53D39E-0AAD-4F39-B1B9-55862D2A3739}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F53D39E-0AAD-4F39-B1B9-55862D2A3739}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F53D39E-0AAD-4F39-B1B9-55862D2A3739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E56FC17-EEE9-4F00-9EF0-7654D1586665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E56FC17-EEE9-4F00-9EF0-7654D1586665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E56FC17-EEE9-4F00-9EF0-7654D1586665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E56FC17-EEE9-4F00-9EF0-7654D1586665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F17AE82C-B90A-47D6-8A3A-FB07250ECD50}
+		SolutionGuid = {B18AFB58-045F-496B-9014-10A620702C8A}
 	EndGlobalSection
 EndGlobal
