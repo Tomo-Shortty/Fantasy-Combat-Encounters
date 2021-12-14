@@ -15,12 +15,13 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int Id { get; set; }
         string Name { get; set; }
         string CreatureType { get; set; }
+        string Size { get; set; }
         Faction Faction { get; set; }
         int Armour { get; set; }
         bool HasShield { get; set; }
         int HitPoints { get; set; }
         bool IsEngaged { get; set; }
-        List<Player> EngagedEnemies { get; set; }
+        List<ICombatant> EngagedEnemies { get; set; }
         List<IWeapon> MeleeWeapons { get; set; }
         int MeleeAttacks { get; set; }
         List<IWeapon> RangedWeapons { get; set; }
@@ -37,6 +38,9 @@ namespace FantasyCombatEncounters.Classes.Combatants
         List<string> DamageResistances { get; set; }
         List<string> DamageImmunities { get; set; }
         List<string> ConditionImmunities { get; set; }
-        int InitiativeBonus { get; set; }
+        int InitiativeBonus { get; set; }       
+        int StealthBonus { get; set; }
+        int PerceptionBonus { get; set; }
+        int PassivePerception { get; set; }
     }
 }
