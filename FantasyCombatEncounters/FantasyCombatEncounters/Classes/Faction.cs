@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FantasyCombatEncounters.Classes.Combatants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace FantasyCombatEncounters.Classes
     {
         private int Id;
         private string _name;
+        private List<ICombatant> _combatants;
 
         public Faction(int Id, string Name)
         {
@@ -21,9 +23,11 @@ namespace FantasyCombatEncounters.Classes
             else
             {
                 _name = Name;
-            }           
+            }
+            _combatants = new List<ICombatant>();
         }
 
         public string Name => _name;
+        public List<ICombatant> Combatants => _combatants;
     }
 }
