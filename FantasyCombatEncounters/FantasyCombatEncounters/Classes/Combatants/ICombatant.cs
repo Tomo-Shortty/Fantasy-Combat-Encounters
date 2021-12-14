@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FantasyCombatEncounters.Classes.Types;
 
 namespace FantasyCombatEncounters.Classes.Combatants
 {
@@ -14,8 +15,8 @@ namespace FantasyCombatEncounters.Classes.Combatants
     {
         int Id { get; set; }
         string Name { get; set; }
-        string CreatureType { get; set; }
-        string Size { get; set; }
+        CombatantType Type { get; set; }
+        CombatantSize Size { get; set; }
         Faction Faction { get; set; }
         int Armour { get; set; }
         bool HasShield { get; set; }
@@ -35,12 +36,15 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int IntelligenceSave { get; set; }
         int WisdomSave { get; set; }
         int CharismaSave { get; set; }
-        List<string> DamageResistances { get; set; }
-        List<string> DamageImmunities { get; set; }
-        List<string> ConditionImmunities { get; set; }
+        List<DamageType> Vulnerabilities { get; set; }
+        List<DamageType> DamageResistances { get; set; }
+        List<DamageType> DamageImmunities { get; set; }
+        List<Condition> ConditionImmunities { get; set; }
         int InitiativeBonus { get; set; }       
         int StealthBonus { get; set; }
         int PerceptionBonus { get; set; }
         int PassivePerception { get; set; }
+        bool IsHidden { get; set; }
+        bool IsSurprised { get; set; }
     }
 }

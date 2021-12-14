@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Types
 {
-    internal enum CreatureType
+    internal enum CombatantType
     {
         Aberration,
         Beast,
