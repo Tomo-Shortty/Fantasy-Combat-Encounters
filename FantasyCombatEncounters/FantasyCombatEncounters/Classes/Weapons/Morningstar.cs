@@ -1,4 +1,5 @@
 ﻿using FantasyCombatEncounters.Classes.Abilities;
+using FantasyCombatEncounters.Classes.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,25 +14,27 @@ namespace FantasyCombatEncounters.Classes.Weapons
         {
             Id = id;
             Name = "Morningstar";
-            Type = "Melee";
+            Type = WeaponType.Melee;
+            IsTwoHanded = false;
             Damage = damage;
-            DamageType = "Piercing";
+            DamageType = DamageType.Piercing;
             AttackBonus = attackBonus;
             Save = 0;
             SecondDamage = 0;
-            SecondDamageType = "";
+            SecondDamageType = DamageType.None;
             BonusEffect = null;
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
+        public WeaponType Type { get; set; }
+        public bool IsTwoHanded { get; set; }
         public int Damage { get; set; }
-        public string DamageType { get; set; }
+        public DamageType DamageType { get; set; }
         public int AttackBonus { get; set; }
         public int Save { get; set; }
         public int SecondDamage { get; set; }
-        public string SecondDamageType { get; set; }
+        public DamageType SecondDamageType { get; set; }
         public IAbility? BonusEffect { get; set; }
     }
 }

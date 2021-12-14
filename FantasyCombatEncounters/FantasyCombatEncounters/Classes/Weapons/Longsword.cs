@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Weapons
 {
-    internal class Javelin : IWeapon
+    internal class Longsword : IWeapon
     {
-        public Javelin(int id, int damage, int attackBonus)
+        public Longsword(int id, int damage, int attackBonus)
         {
             Id = id;
-            Name = "Javelin";
-            Type = WeaponType.MeleeOrRanged;
+            Name = "Longsword";
+            Type = WeaponType.Melee;
             IsTwoHanded = false;
             Damage = damage;
-            DamageType = DamageType.Piercing;
+            DamageType = DamageType.Slashing;
             AttackBonus = attackBonus;
             Save = 0;
             SecondDamage = 0;

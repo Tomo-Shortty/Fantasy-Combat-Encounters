@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Weapons
 {
-    internal class Javelin : IWeapon
+    internal class Longbow : IWeapon
     {
-        public Javelin(int id, int damage, int attackBonus)
+        public Longbow(int id, int damage, int attackBonus)
         {
             Id = id;
-            Name = "Javelin";
-            Type = WeaponType.MeleeOrRanged;
-            IsTwoHanded = false;
+            Name = "Longbow";
+            Type = WeaponType.Ranged;
+            IsTwoHanded = true;
             Damage = damage;
             DamageType = DamageType.Piercing;
             AttackBonus = attackBonus;
@@ -23,6 +23,7 @@ namespace FantasyCombatEncounters.Classes.Weapons
             SecondDamage = 0;
             SecondDamageType = DamageType.None;
             BonusEffect = null;
+
         }
 
         public int Id { get; set; }

@@ -20,6 +20,7 @@ namespace FantasyCombatEncounters.Classes.Types
         Psychic,
         Radiant,
         Slashing,
-        Thunder
+        Thunder,
+        None
     }
 }

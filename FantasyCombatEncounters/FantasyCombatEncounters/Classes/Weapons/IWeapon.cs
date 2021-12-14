@@ -1,4 +1,5 @@
 ﻿using FantasyCombatEncounters.Classes.Abilities;
+using FantasyCombatEncounters.Classes.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,14 @@ namespace FantasyCombatEncounters.Classes.Weapons
     {
         int Id { get; set; }
         string Name { get; set; }
-        string Type { get; set; }
+        WeaponType Type { get; set; }
+        bool IsTwoHanded { get; set; }
         int Damage { get; set; }
-        string DamageType { get; set; }
+        DamageType DamageType { get; set; }
         int AttackBonus { get; set; }
         int Save { get; set; }
         int SecondDamage { get; set; }
-        string SecondDamageType { get; set; }
+        DamageType SecondDamageType { get; set; }
         IAbility? BonusEffect { get; set; }
     }
 }

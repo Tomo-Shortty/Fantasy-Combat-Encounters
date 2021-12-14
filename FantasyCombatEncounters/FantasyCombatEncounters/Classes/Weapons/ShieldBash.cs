@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Weapons
 {
-    internal class Javelin : IWeapon
+    internal class ShieldBash : IWeapon
     {
-        public Javelin(int id, int damage, int attackBonus)
+        public ShieldBash(int id, int damage, int attackBonus)
         {
             Id = id;
-            Name = "Javelin";
-            Type = WeaponType.MeleeOrRanged;
+            Name = "Shield Bash";
+            Type = WeaponType.Melee;
             IsTwoHanded = false;
             Damage = damage;
-            DamageType = DamageType.Piercing;
+            DamageType = DamageType.Bludgeoning;
             AttackBonus = attackBonus;
             Save = 0;
             SecondDamage = 0;
             SecondDamageType = DamageType.None;
-            BonusEffect = null;
+            BonusEffect = null; //Todo (ShieldBashBonusEffect)
         }
 
         public int Id { get; set; }
