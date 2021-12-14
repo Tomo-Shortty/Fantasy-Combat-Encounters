@@ -12,7 +12,7 @@ namespace FantasyCombatEncounters.Classes
         private string _name;
         private Player _playerOne;
         private Player _playerTwo;
-        private Player? VictoriousPlayer;
+        private string _victoriousPlayerName;
         private int _pointsLimit;
         private int _turns;
 
@@ -47,6 +47,7 @@ namespace FantasyCombatEncounters.Classes
             }
 
             _pointsLimit = PointsLimit;
+            _victoriousPlayerName = "";
             _turns = 0;
         }
 
@@ -54,12 +55,20 @@ namespace FantasyCombatEncounters.Classes
         public Player PlayerOne => _playerOne;
         public Player PlayerTwo => _playerTwo;
         public int PointsLimit => _pointsLimit;
+        public string VictoriousPlayerName => _victoriousPlayerName;
         public int Turns => _turns;
 
-        public Player SetVictoriousPlayer(Player player)
+        public string SetVictoriousPlayer(Player player)
         {
-            VictoriousPlayer = player;
-            return VictoriousPlayer;
+            _victoriousPlayerName = player.Name;
+            return _victoriousPlayerName;
+        }
+
+        public void ResetGame()
+        {
+            _pointsLimit = 0;
+            _victoriousPlayerName = "";
+            _turns = 0;
         }
     }
 }
