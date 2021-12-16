@@ -8,23 +8,22 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Weapons
 {
-    internal class Longbow : IWeapon
+    internal class SpikedBoneClub : IWeapon
     {
-        public Longbow(int id, int damage, int attackBonus)
+        public SpikedBoneClub(int id, int damage, int secondDamage, int attackBonus)
         {
             Id = id;
-            Name = "Longbow";
-            Type = WeaponType.Ranged;
-            RangedAmmunition = 12;
-            IsTwoHanded = true;
+            Name = "Spiked Bone Club";
+            Type = WeaponType.Melee;
+            RangedAmmunition = 0;
+            IsTwoHanded = false;
             Damage = damage;
-            DamageType = DamageType.Piercing;
+            DamageType = DamageType.Bludgeoning;
             AttackBonus = attackBonus;
             Save = 0;
-            SecondDamage = 0;
-            SecondDamageType = DamageType.None;
+            SecondDamage = secondDamage;
+            SecondDamageType = DamageType.Piercing;
             BonusEffect = null;
-
         }
 
         public int Id { get; set; }

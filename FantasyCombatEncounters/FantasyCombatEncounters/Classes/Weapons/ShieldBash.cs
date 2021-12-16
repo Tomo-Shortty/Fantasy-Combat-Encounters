@@ -15,6 +15,7 @@ namespace FantasyCombatEncounters.Classes.Weapons
             Id = id;
             Name = "Shield Bash";
             Type = WeaponType.Melee;
+            RangedAmmunition = 0;
             IsTwoHanded = false;
             Damage = damage;
             DamageType = DamageType.Bludgeoning;
@@ -22,12 +23,13 @@ namespace FantasyCombatEncounters.Classes.Weapons
             Save = 0;
             SecondDamage = 0;
             SecondDamageType = DamageType.None;
-            BonusEffect = null; //Todo (ShieldBashBonusEffect)
+            BonusEffect = null;
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public WeaponType Type { get; set; }
+        public int RangedAmmunition { get; set; }
         public bool IsTwoHanded { get; set; }
         public int Damage { get; set; }
         public DamageType DamageType { get; set; }

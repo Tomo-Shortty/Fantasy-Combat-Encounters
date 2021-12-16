@@ -46,5 +46,6 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int PassivePerception { get; set; }
         bool IsHidden { get; set; }
         bool IsSurprised { get; set; }
+        List<Condition> CurrentConditions { get; set; }
     }
 }

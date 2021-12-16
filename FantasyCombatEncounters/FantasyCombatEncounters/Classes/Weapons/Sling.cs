@@ -8,23 +8,22 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Weapons
 {
-    internal class Longbow : IWeapon
+    internal class Sling : IWeapon
     {
-        public Longbow(int id, int damage, int attackBonus)
+        public Sling(int id, int damage, int attackBonus)
         {
             Id = id;
-            Name = "Longbow";
+            Name = "Sling";
             Type = WeaponType.Ranged;
             RangedAmmunition = 12;
-            IsTwoHanded = true;
+            IsTwoHanded = false;
             Damage = damage;
-            DamageType = DamageType.Piercing;
+            DamageType = DamageType.Bludgeoning;
             AttackBonus = attackBonus;
             Save = 0;
             SecondDamage = 0;
             SecondDamageType = DamageType.None;
             BonusEffect = null;
-
         }
 
         public int Id { get; set; }

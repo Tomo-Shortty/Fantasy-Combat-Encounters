@@ -8,23 +8,22 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Weapons
 {
-    internal class Longbow : IWeapon
+    internal class Tentacle : IWeapon
     {
-        public Longbow(int id, int damage, int attackBonus)
+        public Tentacle(int id, int damage, int attackBonus)
         {
             Id = id;
-            Name = "Longbow";
-            Type = WeaponType.Ranged;
-            RangedAmmunition = 12;
-            IsTwoHanded = true;
+            Name = "Tentacle";
+            Type = WeaponType.Melee;
+            RangedAmmunition = 0;
+            IsTwoHanded = false;
             Damage = damage;
-            DamageType = DamageType.Piercing;
+            DamageType = DamageType.Psychic;
             AttackBonus = attackBonus;
             Save = 0;
             SecondDamage = 0;
             SecondDamageType = DamageType.None;
             BonusEffect = null;
-
         }
 
         public int Id { get; set; }

@@ -15,6 +15,7 @@ namespace FantasyCombatEncounters.Classes.Weapons
             Id = id;
             Name = "Shortbow";
             Type = WeaponType.Ranged;
+            RangedAmmunition = 12;
             IsTwoHanded = true;
             Damage = damage;
             DamageType = DamageType.Piercing;
@@ -27,6 +28,7 @@ namespace FantasyCombatEncounters.Classes.Weapons
         public int Id { get; set; }
         public string Name { get; set; }
         public WeaponType Type { get; set; }
+        public int RangedAmmunition { get; set; }
         public bool IsTwoHanded { get; set; }
         public int Damage { get; set; }
         public DamageType DamageType { get; set; }
