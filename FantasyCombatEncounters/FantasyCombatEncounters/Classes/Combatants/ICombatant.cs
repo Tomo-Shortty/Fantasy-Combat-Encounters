@@ -47,5 +47,6 @@ namespace FantasyCombatEncounters.Classes.Combatants
         bool IsHidden { get; set; }
         bool IsSurprised { get; set; }
         List<Condition> CurrentConditions { get; set; }
+        CombatantStatus Status { get; set; }
     }
 }

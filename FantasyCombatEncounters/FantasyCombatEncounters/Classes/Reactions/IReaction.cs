@@ -8,5 +8,10 @@ namespace FantasyCombatEncounters.Classes.Reactions
 {
     internal interface IReaction
     {
+        int Id { get; set; }
+        string Name { get; set; }
+        bool UnlimitedUses { get; set; }
+        int UsesPerTurn { get; set; }
+        int UsesPerGame { get; set; }
     }
 }
