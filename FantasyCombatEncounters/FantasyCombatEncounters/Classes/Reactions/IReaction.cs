@@ -10,8 +10,8 @@ namespace FantasyCombatEncounters.Classes.Reactions
     {
         int Id { get; set; }
         string Name { get; set; }
-        bool UnlimitedUses { get; set; }
-        int UsesPerTurn { get; set; }
-        int UsesPerGame { get; set; }
+        bool ReactionUsed { get; set; }
+
+        void TriggerReaction();
     }
 }

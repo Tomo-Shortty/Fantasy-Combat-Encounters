@@ -23,9 +23,8 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int HitPoints { get; set; }
         bool IsEngaged { get; set; }
         List<ICombatant> EngagedEnemies { get; set; }
-        List<IWeapon> MeleeWeapons { get; set; }
+        List<IWeapon> Weapons { get; set; }
         int MeleeAttacks { get; set; }
-        List<IWeapon> RangedWeapons { get; set; }
         int RangedAttacks { get; set; }
         List<IAbility> Abilities { get; set; }
         List<IAction> Actions { get; set; }
