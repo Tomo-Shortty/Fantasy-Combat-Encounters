@@ -1,12 +1,6 @@
 ﻿using FantasyCombatEncounters.Classes.Weapons;
-using FantasyCombatEncounters.Classes.Abilities;
 using FantasyCombatEncounters.Classes.Actions;
-using FantasyCombatEncounters.Classes.Reactions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FantasyCombatEncounters.Classes.Types;
 
 namespace FantasyCombatEncounters.Classes.Combatants
@@ -21,14 +15,13 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int Armour { get; set; }
         bool HasShield { get; set; }
         int HitPoints { get; set; }
+        bool IsFlying { get; set; }
         bool IsEngaged { get; set; }
         List<ICombatant> EngagedEnemies { get; set; }
         List<IWeapon> Weapons { get; set; }
         int MeleeAttacks { get; set; }
         int RangedAttacks { get; set; }
-        List<IAbility> Abilities { get; set; }
         List<IAction> Actions { get; set; }
-        List<IReaction> Reactions { get; set; }
         int StrengthSave { get; set; }
         int DexteritySave { get; set; }
         int ConstitutionSave { get; set; }
