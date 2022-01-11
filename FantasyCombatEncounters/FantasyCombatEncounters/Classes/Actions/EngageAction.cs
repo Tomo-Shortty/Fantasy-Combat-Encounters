@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Actions
 {
-    internal class Engage : IAction
+    internal class EngageAction : IAction
     {
-        public Engage()
+        public EngageAction()
         {
             Name = "Engage";
             Type = ActionType.Move;
@@ -19,25 +19,21 @@ namespace FantasyCombatEncounters.Classes.Actions
         public string Name { get; set; }
         public ActionType Type { get; set; }
 
-        public string EngageEnemy(ICombatant combatant, ICombatant enemy)
+        public string Engage(ICombatant combatant, ICombatant enemy)
         {
-            if (combatant.Engaged)
+            if (combatant.IsEngaged)
             {
                 foreach (ICombatant creature in combatant.EngagedEnemies)
                 {
-                    if (!creature.ReactionUsed)
-                    {
-                        creature.UseReaction("");
-                    }
                     creature.EngagedEnemies.Remove(combatant);
                 }
                 combatant.EngagedEnemies.Clear();
             }
             combatant.EngagedEnemies.Add(enemy);
             enemy.EngagedEnemies.Add(combatant);
-            combatant.Engaged = true;
-            enemy.Engaged = true;
-            return combatant.Name + " has engaged " + enemy.Name;
+            combatant.IsEngaged = true;
+            enemy.IsEngaged = true;
+            return combatant.Name + " has engaged " + enemy.Name + "!";
         }
     }
 }

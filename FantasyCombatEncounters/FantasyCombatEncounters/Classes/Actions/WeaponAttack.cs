@@ -30,25 +30,25 @@ namespace FantasyCombatEncounters.Classes.Actions
         public string Attack(IWeapon weapon, ICombatant attacker, ICombatant defender)
         {
             Random random = new Random();
-            int diceroll;
+            int diceRoll;
             if (_advantage == true && _disadvantage == false)
             {
-                diceroll = random.Next(0, 21) + 5;
+                diceRoll = random.Next(0, 21) + 5;
             }
             else if (_advantage == false && _disadvantage == true)
             {
-                diceroll = random.Next(0, 21) - 5;
+                diceRoll = random.Next(0, 21) - 5;
             }
             else
             {
-                diceroll = random.Next(0, 21);
+                diceRoll = random.Next(0, 21);
             }
-            int hitResult = diceroll + weapon.AttackBonus;
-            if (hitResult == 1 || hitResult < defender.Armour)
+            int hitResult = diceRoll + weapon.AttackBonus;
+            if (diceRoll == 1 || hitResult < defender.Armour)
             {
                 return weapon.Name + " attack missed!";
             }
-            else if (hitResult == 20)
+            else if (diceRoll == 20)
             {
                 defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 2);
                 if (weapon.SecondDamage > 0)

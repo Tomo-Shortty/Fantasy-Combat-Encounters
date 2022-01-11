@@ -13,12 +13,18 @@ namespace FantasyCombatEncounters.Classes.Combatants
         CombatantSize Size { get; set; }
         Faction Faction { get; set; }
         int Armour { get; set; }
-        bool Shielded { get; set; }
+        bool HasShield { get; set; }
+        bool ShieldIsActive { get; set; }
         int HitPoints { get; set; }
-        bool Flying { get; set; }
-        bool Engaged { get; set; }
+        bool IsFlying { get; set; }
+        bool IsEngaged { get; set; }
+        bool IsDodging { get; set; }
+        bool IsHidden { get; set; }
+        bool IsSurprised { get; set; }
         List<ICombatant> EngagedEnemies { get; set; }
+        ICombatant EnemyReceivingHelpAgainst { get; set; }
         List<IWeapon> Weapons { get; set; }
+        IWeapon ActiveWeapon { get; set; }
         int MeleeAttacks { get; set; }
         int RangedAttacks { get; set; }
         List<IAction> Actions { get; set; }
@@ -34,10 +40,9 @@ namespace FantasyCombatEncounters.Classes.Combatants
         List<Condition> ConditionImmunities { get; set; }
         int InitiativeBonus { get; set; }       
         int StealthBonus { get; set; }
+        int PassiveStealth { get; set; }
         int PerceptionBonus { get; set; }
         int PassivePerception { get; set; }
-        bool IsHidden { get; set; }
-        bool IsSurprised { get; set; }
         List<Condition> CurrentConditions { get; set; }
         CombatantStatus Status { get; set; }
         bool MovementUsed { get; set; }
@@ -52,5 +57,6 @@ namespace FantasyCombatEncounters.Classes.Combatants
         void UseBonusAction(string bonusAction);
         void UseReaction(string reaction);
         void TakeDamage(int damage, int secondDamage, int multiplier);
+        bool ToggleShield(bool status);
     }
 }

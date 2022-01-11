@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FantasyCombatEncounters.Classes.Actions
 {
-    internal class MoveAway : IAction
+    internal class MoveAwayAction : IAction
     {
-        public MoveAway()
+        public MoveAwayAction()
         {
             Name = "Move Away";
             Type = ActionType.Move;
@@ -19,18 +19,14 @@ namespace FantasyCombatEncounters.Classes.Actions
         public string Name { get; set; }
         public ActionType Type { get; set; }
 
-        public string MoveFromEngagement(ICombatant combatant)
+        public string MoveAway(ICombatant combatant)
         {
             foreach (ICombatant enemy in combatant.EngagedEnemies)
             {
-                if (!enemy.ReactionUsed)
-                {
-                    enemy.UseReaction("");
-                }
                 enemy.EngagedEnemies.Remove(combatant);
             }
             combatant.EngagedEnemies.Clear();
-            combatant.Engaged = false;
+            combatant.IsEngaged = false;
             return combatant.Name + " has moved away.";
         }
     }
