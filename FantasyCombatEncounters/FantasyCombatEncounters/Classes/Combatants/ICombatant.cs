@@ -13,10 +13,10 @@ namespace FantasyCombatEncounters.Classes.Combatants
         CombatantSize Size { get; set; }
         Faction Faction { get; set; }
         int Armour { get; set; }
-        bool HasShield { get; set; }
+        bool Shielded { get; set; }
         int HitPoints { get; set; }
-        bool IsFlying { get; set; }
-        bool IsEngaged { get; set; }
+        bool Flying { get; set; }
+        bool Engaged { get; set; }
         List<ICombatant> EngagedEnemies { get; set; }
         List<IWeapon> Weapons { get; set; }
         int MeleeAttacks { get; set; }
@@ -44,7 +44,13 @@ namespace FantasyCombatEncounters.Classes.Combatants
         bool ActionUsed { get; set; }
         bool BonusActionUsed { get; set; }
         bool ReactionUsed { get; set; }
+        int DamageJustTaken { get; set; }
+        int SecondDamageJustTaken { get; set; }
 
-        void TakeDamage(int damage);
+        void UseMovement(string movement);
+        void UseAction(string action);
+        void UseBonusAction(string bonusAction);
+        void UseReaction(string reaction);
+        void TakeDamage(int damage, int secondDamage, int multiplier);
     }
 }

@@ -11,21 +11,38 @@ namespace FantasyCombatEncounters.Classes.Actions
 {
     internal class WeaponAttack : IAction
     {
-        public WeaponAttack(int id, string name, ActionType type)
+        private bool _advantage;
+        private bool _disadvantage;
+
+        public WeaponAttack(string name, ActionType type)
         {
-            Id = id;
             Name = name;
             Type = type;
+            _advantage = false;
+            _disadvantage = false;
         }
 
-        public int Id { get; set; }
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public bool Advantage => _advantage;
+        public bool Disadvantage => _disadvantage;
 
-        public string Attack(IWeapon weapon, ICombatant defender)
+        public string Attack(IWeapon weapon, ICombatant attacker, ICombatant defender)
         {
             Random random = new Random();
-            int diceroll = random.Next(0, 21);
+            int diceroll;
+            if (_advantage == true && _disadvantage == false)
+            {
+                diceroll = random.Next(0, 21) + 5;
+            }
+            else if (_advantage == false && _disadvantage == true)
+            {
+                diceroll = random.Next(0, 21) - 5;
+            }
+            else
+            {
+                diceroll = random.Next(0, 21);
+            }
             int hitResult = diceroll + weapon.AttackBonus;
             if (hitResult == 1 || hitResult < defender.Armour)
             {
@@ -33,13 +50,33 @@ namespace FantasyCombatEncounters.Classes.Actions
             }
             else if (hitResult == 20)
             {
-                defender.TakeDamage((weapon.Damage + weapon.SecondDamage) * 2);
-                return weapon.Name + " attack scored a critical hit!";
+                defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 2);
+                if (weapon.SecondDamage > 0)
+                {
+                    return attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
+                    defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage and " + 
+                    defender.SecondDamageJustTaken.ToString() + " " + weapon.SecondDamageType.ToString().ToLower() + " damage!";
+                } 
+                else
+                {
+                    return attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
+                    defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage!";
+                }
             }
             else
             {
-                defender.TakeDamage(weapon.Damage + weapon.SecondDamage);
-                return weapon.Name + " attack hit!";
+                defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 1);
+                if (weapon.SecondDamage > 0)
+                {
+                    return attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
+                    defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage and " + 
+                    defender.SecondDamageJustTaken.ToString() + " " + weapon.SecondDamageType.ToString().ToLower() + " damage!";
+                }
+                else
+                {
+                    return attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
+                    defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage!";
+                }
             }
         }
     }

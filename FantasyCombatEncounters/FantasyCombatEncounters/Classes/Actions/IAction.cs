@@ -9,7 +9,6 @@ namespace FantasyCombatEncounters.Classes.Actions
 {
     internal interface IAction
     {
-        int Id { get; set; }
         string Name { get; set; }
         ActionType Type { get; set; }
     }
