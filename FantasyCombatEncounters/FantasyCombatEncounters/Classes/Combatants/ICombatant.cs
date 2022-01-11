@@ -40,6 +40,10 @@ namespace FantasyCombatEncounters.Classes.Combatants
         bool IsSurprised { get; set; }
         List<Condition> CurrentConditions { get; set; }
         CombatantStatus Status { get; set; }
+        bool MovementUsed { get; set; }
+        bool ActionUsed { get; set; }
+        bool BonusActionUsed { get; set; }
+        bool ReactionUsed { get; set; }
 
         void TakeDamage(int damage);
     }

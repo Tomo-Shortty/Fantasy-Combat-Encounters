@@ -8,9 +8,9 @@ namespace FantasyCombatEncounters.Classes.Types
 {
     internal enum ActionType
     {
+        Move,
         Action,
         BonusAction,
         Reaction,
-        Ability
     }
 }
