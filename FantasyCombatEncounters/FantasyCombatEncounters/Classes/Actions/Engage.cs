@@ -21,6 +21,18 @@ namespace FantasyCombatEncounters.Classes.Actions
 
         public string EngageEnemy(ICombatant combatant, ICombatant enemy)
         {
+            if (combatant.Engaged)
+            {
+                foreach (ICombatant creature in combatant.EngagedEnemies)
+                {
+                    if (!creature.ReactionUsed)
+                    {
+                        creature.UseReaction("");
+                    }
+                    creature.EngagedEnemies.Remove(combatant);
+                }
+                combatant.EngagedEnemies.Clear();
+            }
             combatant.EngagedEnemies.Add(enemy);
             enemy.EngagedEnemies.Add(combatant);
             combatant.Engaged = true;
