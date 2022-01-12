@@ -53,6 +53,8 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int SecondDamageJustTaken { get; set; }
 
         void TakeDamage(int damage, int secondDamage, int multiplier);
+        void RecoverHitPoints(int hitPoints);
         bool ToggleShield(bool status);
+        void ResetAbilities();
     }
 }

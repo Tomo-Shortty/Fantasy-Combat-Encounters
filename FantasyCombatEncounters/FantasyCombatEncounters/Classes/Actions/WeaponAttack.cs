@@ -13,6 +13,7 @@ namespace FantasyCombatEncounters.Classes.Actions
     {
         private bool _advantage;
         private bool _disadvantage;
+        private int _hitResult;
 
         public WeaponAttack(string name, ActionType type)
         {
@@ -28,6 +29,7 @@ namespace FantasyCombatEncounters.Classes.Actions
         public string Message { get; set; }
         public bool Advantage => _advantage;
         public bool Disadvantage => _disadvantage;
+        public int HitResult => _hitResult;
 
         public void Attack(IWeapon weapon, ICombatant attacker, ICombatant defender)
         {
@@ -45,8 +47,8 @@ namespace FantasyCombatEncounters.Classes.Actions
             {
                 diceRoll = random.Next(0, 21);
             }
-            int hitResult = diceRoll + weapon.AttackBonus;
-            if (diceRoll == 1 || hitResult < defender.Armour)
+            _hitResult = diceRoll + weapon.AttackBonus;
+            if (diceRoll == 1 || _hitResult < defender.Armour)
             {
                 Message = weapon.Name + " attack missed!";
             }

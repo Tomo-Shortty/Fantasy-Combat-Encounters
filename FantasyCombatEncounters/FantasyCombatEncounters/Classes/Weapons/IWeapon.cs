@@ -4,7 +4,6 @@ namespace FantasyCombatEncounters.Classes.Weapons
 {
     internal interface IWeapon
     {
-        int Id { get; set; }
         string Name { get; set; }
         WeaponType Type { get; set; }
         int Ammunition { get; set; }
