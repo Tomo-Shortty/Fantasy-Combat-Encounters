@@ -11,18 +11,20 @@ namespace FantasyCombatEncounters.Classes.Combatants
         string Name { get; set; }
         CombatantType Type { get; set; }
         CombatantSize Size { get; set; }
-        Faction Faction { get; set; }
+        Faction CombatantFaction { get; set; }
         int Armour { get; set; }
         bool HasShield { get; set; }
         bool ShieldIsActive { get; set; }
-        int HitPoints { get; set; }
+        int MaxHitPoints { get; set; }
+        int CurrentHitPoints { get; set; }
+        int TempHitPoints { get; set; }
         bool IsFlying { get; set; }
         bool IsEngaged { get; set; }
         bool IsDodging { get; set; }
         bool IsHidden { get; set; }
         bool IsSurprised { get; set; }
         List<ICombatant> EngagedEnemies { get; set; }
-        ICombatant EnemyReceivingHelpAgainst { get; set; }
+        ICombatant? EnemyReceivingHelpAgainst { get; set; }
         List<IWeapon> Weapons { get; set; }
         IWeapon ActiveWeapon { get; set; }
         int MeleeAttacks { get; set; }
@@ -51,9 +53,11 @@ namespace FantasyCombatEncounters.Classes.Combatants
         bool ReactionUsed { get; set; }
         int DamageJustTaken { get; set; }
         int SecondDamageJustTaken { get; set; }
+        string Message { get; set; }
 
         void TakeDamage(int damage, int secondDamage, int multiplier);
         void RecoverHitPoints(int hitPoints);
+        void GainTempHitPoints(int tempHitPoints);
         bool ToggleShield(bool status);
         void ResetAbilities();
     }

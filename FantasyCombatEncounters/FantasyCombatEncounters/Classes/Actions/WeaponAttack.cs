@@ -54,32 +54,34 @@ namespace FantasyCombatEncounters.Classes.Actions
             }
             else if (diceRoll == 20)
             {
-                defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 2);
                 if (weapon.SecondDamage > 0)
                 {
                     Message = attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage and " + 
                     defender.SecondDamageJustTaken.ToString() + " " + weapon.SecondDamageType.ToString().ToLower() + " damage!";
+                    defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 2);
                 } 
                 else
                 {
                     Message = attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage!";
+                    defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 2);
                 }
             }
             else
-            {
-                defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 1);
+            {               
                 if (weapon.SecondDamage > 0)
                 {
                     Message = attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage and " + 
                     defender.SecondDamageJustTaken.ToString() + " " + weapon.SecondDamageType.ToString().ToLower() + " damage!";
+                    defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 1);
                 }
                 else
                 {
                     Message = attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage!";
+                    defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 1);
                 }
             }
         }

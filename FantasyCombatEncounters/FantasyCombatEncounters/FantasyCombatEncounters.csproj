@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Classes\Combatants\Goblinoids\" />
     <Folder Include="Classes\Combatants\Beholders\" />
     <Folder Include="Classes\Combatants\Giants\" />
     <Folder Include="Classes\Combatants\Gnolls\" />

@@ -22,7 +22,7 @@ namespace FantasyCombatEncounters.Classes.Actions
         public ActionType Type { get; set; }
         public string Message { get; set; }
 
-        public void ChangeWeapon(ICombatant combatant, IWeapon weapon)
+        public IWeapon ChangeWeapon(ICombatant combatant, IWeapon weapon)
         {
             if (((weapon.Type == WeaponType.Melee || weapon.Type == WeaponType.MeleeOrRanged) && !weapon.IsTwoHanded) && combatant.HasShield)
             {
@@ -30,6 +30,7 @@ namespace FantasyCombatEncounters.Classes.Actions
             }
             combatant.ActiveWeapon = weapon;
             Message = combatant.Name + " is now using its " + weapon.Name.ToLower();
+            return weapon;
         }
     }
 }
