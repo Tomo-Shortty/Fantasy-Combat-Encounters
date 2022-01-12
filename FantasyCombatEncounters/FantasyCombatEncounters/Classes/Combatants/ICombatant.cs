@@ -52,10 +52,6 @@ namespace FantasyCombatEncounters.Classes.Combatants
         int DamageJustTaken { get; set; }
         int SecondDamageJustTaken { get; set; }
 
-        void UseMovement(string movement);
-        void UseAction(string action);
-        void UseBonusAction(string bonusAction);
-        void UseReaction(string reaction);
         void TakeDamage(int damage, int secondDamage, int multiplier);
         bool ToggleShield(bool status);
     }

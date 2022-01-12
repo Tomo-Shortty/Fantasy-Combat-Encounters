@@ -15,19 +15,21 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Change Weapon";
             Type = ActionType.Action;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
 
-        public string ChangeWeapon(ICombatant combatant, IWeapon weapon)
+        public void ChangeWeapon(ICombatant combatant, IWeapon weapon)
         {
             if (((weapon.Type == WeaponType.Melee || weapon.Type == WeaponType.MeleeOrRanged) && !weapon.IsTwoHanded) && combatant.HasShield)
             {
                 combatant.ToggleShield(true);
             }
             combatant.ActiveWeapon = weapon;
-            return combatant.Name + " is now using its " + weapon.Name.ToLower();
+            Message = combatant.Name + " is now using its " + weapon.Name.ToLower();
         }
     }
 }

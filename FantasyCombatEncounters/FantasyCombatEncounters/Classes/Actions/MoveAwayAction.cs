@@ -14,12 +14,14 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Move Away";
             Type = ActionType.Move;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
 
-        public string MoveAway(ICombatant combatant)
+        public void MoveAway(ICombatant combatant)
         {
             foreach (ICombatant enemy in combatant.EngagedEnemies)
             {
@@ -27,7 +29,7 @@ namespace FantasyCombatEncounters.Classes.Actions
             }
             combatant.EngagedEnemies.Clear();
             combatant.IsEngaged = false;
-            return combatant.Name + " has moved away.";
+            Message = combatant.Name + " has moved away.";
         }
     }
 }

@@ -17,14 +17,16 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Search";
             Type = ActionType.Action;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
         public bool Advantage => _advantage;
         public bool Disadvantage => _disadvantage;
 
-        public string Search(ICombatant combatant, ICombatant hiddenEnemy)
+        public void Search(ICombatant combatant, ICombatant hiddenEnemy)
         {
             Random random = new Random();
             int diceRoll;
@@ -44,11 +46,11 @@ namespace FantasyCombatEncounters.Classes.Actions
             if (searchResult >= hiddenEnemy.PassiveStealth)
             {
                 hiddenEnemy.IsHidden = false;
-                return combatant.Name + " has spotted " + hiddenEnemy.Name + "! " + hiddenEnemy.Name + " is no longer hidden!";
+                Message = combatant.Name + " has spotted " + hiddenEnemy.Name + "! " + hiddenEnemy.Name + " is no longer hidden!";
             }
             else
             {
-                return combatant.Name + " searched for " + hiddenEnemy.Name + " and could not find them.";
+                Message = combatant.Name + " searched for " + hiddenEnemy.Name + " and could not find them.";
             }
         }
     }

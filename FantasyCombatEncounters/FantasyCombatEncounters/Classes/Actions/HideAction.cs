@@ -16,14 +16,16 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Hide";
             Type = ActionType.Action;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
         public bool Advantage => _advantage;
         public bool Disadvantage => _disadvantage;
 
-        public string Hide(ICombatant combatant, List<ICombatant> enemies)
+        public void Hide(ICombatant combatant, List<ICombatant> enemies)
         {
             Random random = new Random();
             int diceRoll;
@@ -50,11 +52,11 @@ namespace FantasyCombatEncounters.Classes.Actions
             }
             if (enemiesNotHiddenFrom == 0)
             {
-                return combatant.Name + " tried to hide but failed.";
+                Message = combatant.Name + " tried to hide but failed.";
             }
             else
             {
-                return combatant.Name + " is now hiding.";
+                Message = combatant.Name + " is now hiding.";
             }
         }
     }

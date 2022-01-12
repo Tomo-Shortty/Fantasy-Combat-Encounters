@@ -14,15 +14,17 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Dodge";
             Type = ActionType.Action;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
 
-        public string Dodge(ICombatant combatant)
+        public void Dodge(ICombatant combatant)
         {
             combatant.IsDodging = true;
-            return combatant.Name + " is now attempting to dodge attacks!";
+            Message = combatant.Name + " is now attempting to dodge attacks!";
         }
     }
 }

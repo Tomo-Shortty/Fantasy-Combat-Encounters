@@ -11,5 +11,6 @@ namespace FantasyCombatEncounters.Classes.Actions
     {
         string Name { get; set; }
         ActionType Type { get; set; }
+        string Message { get; set; } 
     }
 }

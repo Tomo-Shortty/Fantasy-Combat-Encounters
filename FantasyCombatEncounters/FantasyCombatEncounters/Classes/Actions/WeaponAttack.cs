@@ -18,16 +18,18 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = name;
             Type = type;
+            Message = "";
             _advantage = false;
             _disadvantage = false;
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
         public bool Advantage => _advantage;
         public bool Disadvantage => _disadvantage;
 
-        public string Attack(IWeapon weapon, ICombatant attacker, ICombatant defender)
+        public void Attack(IWeapon weapon, ICombatant attacker, ICombatant defender)
         {
             Random random = new Random();
             int diceRoll;
@@ -46,20 +48,20 @@ namespace FantasyCombatEncounters.Classes.Actions
             int hitResult = diceRoll + weapon.AttackBonus;
             if (diceRoll == 1 || hitResult < defender.Armour)
             {
-                return weapon.Name + " attack missed!";
+                Message = weapon.Name + " attack missed!";
             }
             else if (diceRoll == 20)
             {
                 defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 2);
                 if (weapon.SecondDamage > 0)
                 {
-                    return attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
+                    Message = attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage and " + 
                     defender.SecondDamageJustTaken.ToString() + " " + weapon.SecondDamageType.ToString().ToLower() + " damage!";
                 } 
                 else
                 {
-                    return attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
+                    Message = attacker.Name + " " + weapon.Name.ToLower() + " attack scored a critical hit! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage!";
                 }
             }
@@ -68,13 +70,13 @@ namespace FantasyCombatEncounters.Classes.Actions
                 defender.TakeDamage(weapon.Damage, weapon.SecondDamage, 1);
                 if (weapon.SecondDamage > 0)
                 {
-                    return attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
+                    Message = attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage and " + 
                     defender.SecondDamageJustTaken.ToString() + " " + weapon.SecondDamageType.ToString().ToLower() + " damage!";
                 }
                 else
                 {
-                    return attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
+                    Message = attacker.Name + " " + weapon.Name.ToLower() + " attack hits! " + defender.Name + " has taken " +
                     defender.DamageJustTaken.ToString() + " " + weapon.DamageType.ToString().ToLower() + " damage!";
                 }
             }

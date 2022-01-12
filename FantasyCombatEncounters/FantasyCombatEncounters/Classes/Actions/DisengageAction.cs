@@ -14,12 +14,14 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Disengage";
             Type = ActionType.Action;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
 
-        public string Disengage(ICombatant combatant)
+        public void Disengage(ICombatant combatant)
         {
             foreach (ICombatant enemy in combatant.EngagedEnemies)
             {
@@ -27,7 +29,7 @@ namespace FantasyCombatEncounters.Classes.Actions
             }
             combatant.EngagedEnemies.Clear();
             combatant.IsEngaged = false;
-            return combatant.Name + " has disengaged.";
+            Message = combatant.Name + " has disengaged.";
         }
     }
 }

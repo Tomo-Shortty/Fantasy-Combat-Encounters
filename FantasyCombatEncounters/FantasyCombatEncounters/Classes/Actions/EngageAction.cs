@@ -14,12 +14,14 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Engage";
             Type = ActionType.Move;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
 
-        public string Engage(ICombatant combatant, ICombatant enemy)
+        public void Engage(ICombatant combatant, ICombatant enemy)
         {
             if (combatant.IsEngaged)
             {
@@ -33,7 +35,7 @@ namespace FantasyCombatEncounters.Classes.Actions
             enemy.EngagedEnemies.Add(combatant);
             combatant.IsEngaged = true;
             enemy.IsEngaged = true;
-            return combatant.Name + " has engaged " + enemy.Name + "!";
+            Message = combatant.Name + " has engaged " + enemy.Name + "!";
         }
     }
 }

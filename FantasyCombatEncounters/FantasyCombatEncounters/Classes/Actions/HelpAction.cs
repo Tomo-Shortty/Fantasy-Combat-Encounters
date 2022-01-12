@@ -14,15 +14,17 @@ namespace FantasyCombatEncounters.Classes.Actions
         {
             Name = "Help";
             Type = ActionType.Action;
+            Message = "";
         }
 
         public string Name { get; set; }
         public ActionType Type { get; set; }
+        public string Message { get; set; }
 
-        public string Help(ICombatant combatant, ICombatant ally, ICombatant enemy)
+        public void Help(ICombatant combatant, ICombatant ally, ICombatant enemy)
         {
             ally.EnemyReceivingHelpAgainst = enemy;
-            return combatant.Name + " is helping " + ally.Name + " against " + enemy.Name;
+            Message = combatant.Name + " is helping " + ally.Name + " against " + enemy.Name;
         }
     }
 }
